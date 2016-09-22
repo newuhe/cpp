@@ -37,7 +37,7 @@ int _tmain(int argc, _TCHAR* argv[])
     //////////////////////////////////////////////////////////////////////////
     for (int i = 0; i < 20; ++i)
     {
-        array_append(array, i); //增加元素
+        array_append(array, i); //增加元素，注意数组容量的变更
     }
     assert(array_size(array) == 20); 
     
@@ -61,7 +61,7 @@ int _tmain(int argc, _TCHAR* argv[])
     assert(array_compare(array, array2) == false); 
 
     //////////////////////////////////////////////////////////////////////////
-    array_at(array3, 2) = 5;  //array_at 返回在位置i的元素，且能够被修改
+    array_at(array3, 2) = 5;  //array_at 对位置i的元素进行赋值
     assert(array_compare(array, array3) == false); 
 
     //////////////////////////////////////////////////////////////////////////
