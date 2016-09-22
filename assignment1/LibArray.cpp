@@ -14,6 +14,12 @@
 
 // 只提交CLibArray.cpp及CLibArray.h
 
+// 实验提交：
+// 所有文件打包成一个压缩包，以邮件附件形式发送。邮件主题与压缩包名一致。
+// Email：		esecpp2016@163.com
+// 命名规范：	姓名+学号+第几次作业+第几版
+// 截止时间：	10月2日24：00前
+
 #include "stdafx.h"
 
 #include <assert.h>
@@ -25,19 +31,19 @@ int _tmain(int argc, _TCHAR* argv[])
     CArray array;
     array_initial(array); 
 
-    array_recap(array, 10); 
+    array_recap(array, 10); //重新定义数组容量
     assert(array_capacity(array) == 10); 
 
     //////////////////////////////////////////////////////////////////////////
     for (int i = 0; i < 20; ++i)
     {
-        array_append(array, i); 
+        array_append(array, i); //增加元素
     }
     assert(array_size(array) == 20); 
     
     for (int i = 0; i < array_size(array); ++i)
     {
-        assert(array_at(array, i) == i); 
+        assert(array_at(array, i) == i);//array_at:返回在位置i的元素 
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -45,17 +51,17 @@ int _tmain(int argc, _TCHAR* argv[])
     array_initial(array2); 
     array_initial(array3); 
 
-    array_copy(array, array2); 
+    array_copy(array, array2); //将array拷贝到array2
     assert(array_compare(array, array2) == true); 
     array_copy(array, array3); 
     assert(array_compare(array, array3) == true); 
 
     //////////////////////////////////////////////////////////////////////////
-    array_insert(array2, 2, 3); 
+    array_insert(array2, 2, 3); //在array2 index=2的位置插入元素3
     assert(array_compare(array, array2) == false); 
 
     //////////////////////////////////////////////////////////////////////////
-    array_at(array3, 2) = 5; 
+    array_at(array3, 2) = 5;  //array_at 返回在位置i的元素，且能够被修改
     assert(array_compare(array, array3) == false); 
 
     //////////////////////////////////////////////////////////////////////////
@@ -66,3 +72,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
+
+// 作业提示：
+// typedef struct  
+// {
+//     int *buff; 
+//     int size; 
+//     int capacity; 
+// } CArray;
