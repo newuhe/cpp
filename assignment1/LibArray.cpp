@@ -29,37 +29,43 @@ int _tmain(int argc, _TCHAR* argv[])
     CArray array;
     array_initial(array); 
 
-    array_recap(array, 10); //重新定义数组容量
+    // 重新定义数组容量
+    array_recap(array, 10); 
     assert(array_capacity(array) == 10); 
 
     //////////////////////////////////////////////////////////////////////////
     for (int i = 0; i < 20; ++i)
     {
-        array_append(array, i); //增加元素，注意数组容量的变更
+	// 增加元素，注意数组容量的变更
+        array_append(array, i); 
     }
     assert(array_size(array) == 20); 
     
     for (int i = 0; i < array_size(array); ++i)
     {
-        assert(array_at(array, i) == i);//array_at:返回在位置i的元素 
+	// array_at:返回在位置i的元素 
+        assert(array_at(array, i) == i);
     }
 
     //////////////////////////////////////////////////////////////////////////
     CArray array2, array3; 
     array_initial(array2); 
     array_initial(array3); 
-
-    array_copy(array, array2); //将array拷贝到array2
+  
+    // 将array拷贝到array2
+    array_copy(array, array2); 
     assert(array_compare(array, array2) == true); 
     array_copy(array, array3); 
     assert(array_compare(array, array3) == true); 
 
     //////////////////////////////////////////////////////////////////////////
-    array_insert(array2, 2, 3); //在array2 index=2的位置插入元素3
+    // 在array2 index=2的位置插入元素3
+    array_insert(array2, 2, 3); 
     assert(array_compare(array, array2) == false); 
 
     //////////////////////////////////////////////////////////////////////////
-    array_at(array3, 2) = 5;  //array_at 对位置i的元素进行赋值
+    // array_at 对位置i的元素进行赋值
+    array_at(array3, 2) = 5;  
     assert(array_compare(array, array3) == false); 
 
     //////////////////////////////////////////////////////////////////////////
@@ -67,7 +73,7 @@ int _tmain(int argc, _TCHAR* argv[])
     array_destroy(array2); 
     array_destroy(array3); 
 
-	return 0;
+    return 0;
 }
 
 
