@@ -72,7 +72,7 @@ bool array_compare(CArray &array1, CArray &array2)
         return false; 
     }
     
-    return memcmp(array1.buff, array2.buff, array1.size) == 0; 
+    return memcmp(array1.buff, array2.buff, array1.size * sizeof(int)) == 0; 
 }
 
 void array_destroy(CArray &array)
