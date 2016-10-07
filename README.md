@@ -1,6 +1,11 @@
-ViSG实验室C++课程2016       
+ViSG实验室C++课程2016
 
-第一次上机作业答案已上传
+***
+
+* 第二次上机作业已上传
+* 第一次上机作业答案已上传
+
+***
 
 * 课程github网站：https://github.com/visgcourse/cpp
 
