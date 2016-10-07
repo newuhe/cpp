@@ -8,7 +8,7 @@ ViSG实验室C++课程2016
 
 ***
 
-* 课程github网站：https://github.com/visgcourse/cpp
+* 课程github网站：https://visgcourse.github.io
 
 * 每次上机作业的题目和测试代码在github网站上提前公布；上机作业的答案在提交时限结束后公布。
 
