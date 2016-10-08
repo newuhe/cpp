@@ -23,7 +23,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
     CArray array;
-	// 不再需要initial，但应该有正确的初始化
+    // 不再需要initial，但应该有正确的初始化
     // array_initial(array); 
 
     //array.recap(10); 
@@ -61,10 +61,10 @@ int _tmain(int argc, _TCHAR* argv[])
     assert(array.compare(array3) == false); 
 
     //////////////////////////////////////////////////////////////////////////
-	// 不再需要destroy，但应该有正确的内存释放
+    // 不再需要destroy，但应该有正确的内存释放
     // array_destroy(array); 
     // array_destroy(array2); 
     // array_destroy(array3); 
 
-	return 0;
+    return 0;
 }
