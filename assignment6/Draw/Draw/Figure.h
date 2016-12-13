@@ -6,29 +6,29 @@
 
 class BlackBoard; 
 
-/// @brief [ÀàµÄ¸ÅÒªÃèÊö]
+/// @brief [ç±»çš„æ¦‚è¦æè¿°]
 ///
-/// [ÃèÊöÄãµÄÀà.]
+/// [æè¿°ä½ çš„ç±».]
 ///
 /// @see 
 ///
 class Figure
 {
 public:
-    // FigureÀàÎö¹¹º¯Êı
+    // Figureç±»ææ„å‡½æ•°
     virtual ~Figure() { }
  
-    // FigureÀà½Ó¿Ú.
+    // Figureç±»æ¥å£.
 public:
-    // ËùÓĞFigureÅÉÉúÀà¶¼»áÌá¹©ÕâÁ½¸ö½Ó¿Ú£¬
-    // ´Ó¶øÊ¹Ê¹ÓÃÕß£¨FigureManager£©¿ÉÎŞĞèÒÀÀµ
-    // ÓÚ²»Í¬µÄ»æÍ¼ÀàĞÍµÄÊµÏÖ
-    // ²»ÒÀÀµ = ²»ÖªµÀ
-    // ²»ÖªµÀ = À©Õ¹ÎŞĞè¸ü¸Ä
+    // æ‰€æœ‰Figureæ´¾ç”Ÿç±»éƒ½ä¼šæä¾›è¿™ä¸¤ä¸ªæ¥å£ï¼Œ
+    // ä»è€Œä½¿ä½¿ç”¨è€…ï¼ˆFigureManagerï¼‰å¯æ— éœ€ä¾èµ–
+    // äºä¸åŒçš„ç»˜å›¾ç±»å‹çš„å®ç°
+    // ä¸ä¾èµ– = ä¸çŸ¥é“
+    // ä¸çŸ¥é“ = æ‰©å±•æ— éœ€æ›´æ”¹
     virtual void draw(BlackBoard &) = 0; 
     virtual void input(std::istream &is) = 0; 
 
-}; // class FigureÀà¶¨Òå½áÊø.
+}; // class Figureç±»å®šä¹‰ç»“æŸ.
 
 // Factory Pattern
 class FigureFactory
@@ -41,14 +41,14 @@ public:
     const std::string &name() { return _name; }
 
     virtual Figure *createFigure() = 0; 
-
+    virtual ~FigureFactory() { }
 private:
     std::string _name; 
     int _id; 
 };
 
-// ÓÃÓÚÊµÏÖ±àÒëÆ÷¶àÌ¬
-// ´Ó¶ø¼ò»¯¶Ô¹¤³ÌÀàµÄ¹¹Ôì
+// ç”¨äºå®ç°ç¼–è¯‘å™¨å¤šæ€
+// ä»è€Œç®€åŒ–å¯¹å·¥ç¨‹ç±»çš„æ„é€ 
 template<class T>
 class Factory : public FigureFactory
 {
